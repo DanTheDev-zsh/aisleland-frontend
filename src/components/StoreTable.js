@@ -32,7 +32,7 @@ function StoreTable() {
     console.log(data)
     setFoods(data)
   })
-  },[])
+  },[id])
 
   // houseItem Fetch
   useEffect(()=>{
@@ -47,7 +47,7 @@ function StoreTable() {
     console.log(data)
     setHouseItems(data)
   })
-  },[])
+  },[id])
 
   const updateAisle = (e) =>{
     e.preventDefault()
@@ -66,7 +66,7 @@ function StoreTable() {
     }).then(data=>{
       console.log(data)
       const newFood = foodItems.map(item=>{
-        if (item._id == foodID){
+        if (item._id === foodID){
           return data
         }
         return item
@@ -94,7 +94,7 @@ function StoreTable() {
     }).then(data=>{
       console.log(data)
       const newHouse = houseItems.map(item=>{
-        if (item._id == houseID){
+        if (item._id === houseID){
           return data
         }
         return item
@@ -124,7 +124,7 @@ function StoreTable() {
       </thead>
       <tbody>
         <tr>
-          <td>Bread<img src={require("../icons/foodIcons/icons8-bread-48.png")}></img></td>
+          <td>Bread<img alt="icon"  src={require("../icons/foodIcons/icons8-bread-48.png")}></img></td>
           <td>{foodItems?.find(breadItem=>(breadItem.typeName.toLowerCase()==="bread"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(breadItem=>(breadItem.typeName.toLowerCase()==="bread"))?._id}>
@@ -138,7 +138,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Cereal<img src={require("../icons/foodIcons/icons8-cereal-48.png")}></img></td>
+          <td>Cereal<img alt="icon"  src={require("../icons/foodIcons/icons8-cereal-48.png")}></img></td>
           <td>{foodItems?.find(cerealItem=>(cerealItem.typeName.toLowerCase()==="cereal"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(cerealItem=>(cerealItem.typeName.toLowerCase()==="cereal"))?._id}>
@@ -166,7 +166,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Pasta<img src={require("../icons/foodIcons/icons8-spaghetti-48.png")}></img></td>
+          <td>Pasta<img alt="icon"  src={require("../icons/foodIcons/icons8-spaghetti-48.png")}></img></td>
           <td>{foodItems?.find(pastaIteam=>(pastaIteam.typeName.toLowerCase()==="pasta"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(pastaIteam=>(pastaIteam.typeName.toLowerCase()==="pasta"))?._id}>
@@ -180,7 +180,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Jams<img src={require("../icons/foodIcons/icons8-bread-48.png")}></img></td>
+          <td>Jams<img alt="icon"  src={require("../icons/foodIcons/icons8-bread-48.png")}></img></td>
           <td>{foodItems?.find(jamItem=>(jamItem.typeName.toLowerCase()==="jams"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(jamItem=>(jamItem.typeName.toLowerCase()==="jams"))?._id}>
@@ -194,7 +194,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Coffee<img src={require("../icons/foodIcons/icons8-coffee-pot-48.png")}></img></td>
+          <td>Coffee<img alt="icon"  src={require("../icons/foodIcons/icons8-coffee-pot-48.png")}></img></td>
           <td>{foodItems?.find(coffeeItem=>(coffeeItem.typeName.toLowerCase()==="coffee"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(coffeeItem=>(coffeeItem.typeName.toLowerCase()==="coffee"))?._id}>
@@ -208,7 +208,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Tea<img src={require("../icons/foodIcons/icons8-teapot-48.png")}></img></td>
+          <td>Tea<img alt="icon"  src={require("../icons/foodIcons/icons8-teapot-48.png")}></img></td>
           <td>{foodItems?.find(teaItem=>(teaItem.typeName.toLowerCase()==="tea"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(teaItem=>(teaItem.typeName.toLowerCase()==="tea"))?._id}>
@@ -222,7 +222,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Baking<img src={require("../icons/foodIcons/icons8-bake-48.png")}></img></td>
+          <td>Baking<img alt="icon"  src={require("../icons/foodIcons/icons8-bake-48.png")}></img></td>
           <td>{foodItems?.find(bakingItem=>(bakingItem.typeName.toLowerCase()==="baking"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(bakingItem=>(bakingItem.typeName.toLowerCase()==="baking"))?._id}>
@@ -236,7 +236,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Bulk Foods<img src={require("../icons/foodIcons/icons8-bulk-food-48.png")}></img></td>
+          <td>Bulk Foods<img alt="icon"  src={require("../icons/foodIcons/icons8-bulk-food-48.png")}></img></td>
           <td>{foodItems?.find(bulkItem=>(bulkItem.typeName.toLowerCase()==="bulk foods"))?.aisleLocation}</td>
           <td>
           <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(bulkItem=>(bulkItem.typeName.toLowerCase()==="bulk foods"))?._id}>
@@ -250,7 +250,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Chips<img src={require("../icons/foodIcons/icons8-nachos-48.png")}></img></td>
+          <td>Chips<img alt="icon"  src={require("../icons/foodIcons/icons8-nachos-48.png")}></img></td>
           <td>{foodItems?.find(chipsItem=>(chipsItem.typeName.toLowerCase()==="chips"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(chipsItem=>(chipsItem.typeName.toLowerCase()==="chips"))?._id}>
@@ -264,7 +264,7 @@ function StoreTable() {
           </td>
         </tr>
       <tr>
-          <td>Rice<img src={require("../icons/foodIcons/icons8-rice-bowl-48.png")}></img></td>
+          <td>Rice<img alt="icon"  src={require("../icons/foodIcons/icons8-rice-bowl-48.png")}></img></td>
           <td>{foodItems?.find(riceItem=>(riceItem.typeName.toLowerCase()==="rice"))?.aisleLocation}</td>
           <td>
           <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(riceItem=>(riceItem.typeName.toLowerCase()==="rice"))?._id}>
@@ -278,7 +278,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Condiments<img src={require("../icons/foodIcons/icons8-mustard-48.png")}></img></td>
+          <td>Condiments<img alt="icon"  src={require("../icons/foodIcons/icons8-mustard-48.png")}></img></td>
           <td>{foodItems?.find(condimentsItem=>(condimentsItem.typeName.toLowerCase()==="condiments"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(condimentsItem=>(condimentsItem.typeName.toLowerCase()==="condiments"))?._id}>
@@ -292,7 +292,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Salad Dressing<img src={require("../icons/foodIcons/icons8-salad-48.png")}></img></td>
+          <td>Salad Dressing<img alt="icon"  src={require("../icons/foodIcons/icons8-salad-48.png")}></img></td>
           <td>{foodItems?.find(saladItem=>(saladItem.typeName.toLowerCase()==="salad dressing"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(saladItem=>(saladItem.typeName.toLowerCase()==="salad dressing"))?._id}>
@@ -306,7 +306,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Eggs<img src={require("../icons/foodIcons/icons8-egg-carton-48.png")}></img></td>
+          <td>Eggs<img alt="icon"  src={require("../icons/foodIcons/icons8-egg-carton-48.png")}></img></td>
           <td>{foodItems?.find(eggsItem=>(eggsItem.typeName.toLowerCase()==="eggs"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(eggsItem=>(eggsItem.typeName.toLowerCase()==="eggs"))?._id}>
@@ -320,7 +320,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Juice<img src={require("../icons/foodIcons/icons8-lemonade-48.png")}></img></td>
+          <td>Juice<img alt="icon"  src={require("../icons/foodIcons/icons8-lemonade-48.png")}></img></td>
           <td>{foodItems?.find(juiceItem=>(juiceItem.typeName.toLowerCase()==="juice"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(juiceItem=>(juiceItem.typeName.toLowerCase()==="juice"))?._id}>
@@ -334,7 +334,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Butter<img src={require("../icons/foodIcons/icons8-butter-48.png")}></img></td>
+          <td>Butter<img alt="icon"  src={require("../icons/foodIcons/icons8-butter-48.png")}></img></td>
           <td>{foodItems?.find(butterItem=>(butterItem.typeName.toLowerCase()==="butter"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(butterItem=>(butterItem.typeName.toLowerCase()==="butter"))?._id}>
@@ -348,7 +348,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Milk<img src={require("../icons/foodIcons/icons8-milk-48.png")}></img></td>
+          <td>Milk<img alt="icon"  src={require("../icons/foodIcons/icons8-milk-48.png")}></img></td>
           <td>{foodItems?.find(milkItem=>(milkItem.typeName.toLowerCase()==="milk"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(milkItem=>(milkItem.typeName.toLowerCase()==="milk"))?._id}>
@@ -362,7 +362,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Creamer<img src={require("../icons/foodIcons/icons8-creamer-48.png")}></img></td>
+          <td>Creamer<img alt="icon"  src={require("../icons/foodIcons/icons8-creamer-48.png")}></img></td>
           <td>{foodItems?.find(creamerItem=>(creamerItem.typeName.toLowerCase()==="creamer"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(creamerItem=>(creamerItem.typeName.toLowerCase()==="creamer"))?._id}>
@@ -376,7 +376,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Cheese<img src={require("../icons/foodIcons/icons8-cheese-48.png")}></img></td>
+          <td>Cheese<img alt="icon"  src={require("../icons/foodIcons/icons8-cheese-48.png")}></img></td>
           <td>{foodItems?.find(cheeseItem=>(cheeseItem.typeName.toLowerCase()==="cheese"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(cheeseItem=>(cheeseItem.typeName.toLowerCase()==="cheese"))?._id}>
@@ -406,7 +406,7 @@ function StoreTable() {
       </thead>
       <tbody>
         <tr>
-          <td>Pizza<img src={require("../icons/foodIcons/icons8-pizza-48.png")}></img></td>
+          <td>Pizza<img alt="icon"  src={require("../icons/foodIcons/icons8-pizza-48.png")}></img></td>
           <td>{foodItems?.find(pizzaIteam=>(pizzaIteam.typeName.toLowerCase()==="frozen pizza"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(pizzaIteam=>(pizzaIteam.typeName.toLowerCase()==="frozen pizza"))?._id}>
@@ -420,7 +420,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Single Meals<img src={require("../icons/foodIcons/icons8-meal-48.png")}></img></td>
+          <td>Single Meals<img alt="icon"  src={require("../icons/foodIcons/icons8-meal-48.png")}></img></td>
           <td>{foodItems?.find(singelMealsItem=>(singelMealsItem.typeName.toLowerCase()==="frozen single meals"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(singelMealsItem=>(singelMealsItem.typeName.toLowerCase()==="frozen single meals"))?._id}>
@@ -448,7 +448,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Family Meals<img src={require("../icons/foodIcons/icons8-family-48.png")}></img></td>
+          <td>Family Meals<img alt="icon"  src={require("../icons/foodIcons/icons8-family-48.png")}></img></td>
           <td>{foodItems?.find(familyMealsItem=>(familyMealsItem.typeName.toLowerCase()==="frozen family meals"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(familyMealsItem=>(familyMealsItem.typeName.toLowerCase()==="frozen family meals"))?._id}>
@@ -462,7 +462,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Vegetables<img src={require("../icons/foodIcons/icons8-broccolini-48.png")}></img></td>
+          <td>Vegetables<img alt="icon"  src={require("../icons/foodIcons/icons8-broccolini-48.png")}></img></td>
           <td>{foodItems?.find(vegetableItems=>(vegetableItems.typeName.toLowerCase()==="frozen vegetables"))?.aisleLocation}</td>
           <td>
            <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(vegetableItems=>(vegetableItems.typeName.toLowerCase()==="frozen vegetables"))?._id}>
@@ -476,7 +476,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Meats<img src={require("../icons/foodIcons/icons8-cuts-of-beef-48.png")}></img></td>
+          <td>Meats<img alt="icon"  src={require("../icons/foodIcons/icons8-cuts-of-beef-48.png")}></img></td>
           <td>{foodItems?.find(meatItem=>(meatItem.typeName.toLowerCase()==="frozen meats"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(meatItem=>(meatItem.typeName.toLowerCase()==="frozen meats"))?._id}>
@@ -506,7 +506,7 @@ function StoreTable() {
       </thead>
       <tbody>
         <tr>
-          <td>Tomatoes<img src={require("../icons/foodIcons/icons8-tomatoes-48.png")}></img></td>
+          <td>Tomatoes<img alt="icon"  src={require("../icons/foodIcons/icons8-tomatoes-48.png")}></img></td>
           <td>{foodItems?.find(tomatosItem=>(tomatosItem.typeName.toLowerCase()==="canned tomatoes"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(tomatosItem=>(tomatosItem.typeName.toLowerCase()==="canned tomatoes"))?._id}>
@@ -520,7 +520,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Beans<img src={require("../icons/foodIcons/icons8-white-beans-48.png")}></img></td>
+          <td>Beans<img alt="icon"  src={require("../icons/foodIcons/icons8-white-beans-48.png")}></img></td>
           <td>{foodItems?.find(beansItem=>(beansItem.typeName.toLowerCase()==="canned beans"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(beansItem=>(beansItem.typeName.toLowerCase()==="canned beans"))?._id}>
@@ -534,7 +534,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Peas<img src={require("../icons/foodIcons/icons8-peas-48.png")}></img></td>
+          <td>Peas<img alt="icon"  src={require("../icons/foodIcons/icons8-peas-48.png")}></img></td>
           <td>{foodItems?.find(peasItem=>(peasItem.typeName.toLowerCase()==="canned peas"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(peasItem=>(peasItem.typeName.toLowerCase()==="canned peas"))?._id}>
@@ -548,7 +548,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Peaches<img src={require("../icons/foodIcons/icons8-peach-48.png")}></img></td>
+          <td>Peaches<img alt="icon"  src={require("../icons/foodIcons/icons8-peach-48.png")}></img></td>
           <td>{foodItems?.find(peachesItem=>(peachesItem.typeName.toLowerCase()==="canned peaches"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(peachesItem=>(peachesItem.typeName.toLowerCase()==="canned peaches"))?._id}>
@@ -562,7 +562,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Tuna<img src={require("../icons/foodIcons/icons8-tuna-48.png")}></img></td>
+          <td>Tuna<img alt="icon"  src={require("../icons/foodIcons/icons8-tuna-48.png")}></img></td>
           <td>{foodItems?.find(tunaItems=>(tunaItems.typeName.toLowerCase()==="canned tuna"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(tunaItems=>(tunaItems.typeName.toLowerCase()==="canned tuna"))?._id}>
@@ -576,7 +576,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Chili<img src={require("../icons/foodIcons/icons8-chili-pepper-48.png")}></img></td>
+          <td>Chili<img alt="icon"  src={require("../icons/foodIcons/icons8-chili-pepper-48.png")}></img></td>
           <td>{foodItems?.find(chiliItem=>(chiliItem.typeName.toLowerCase()==="canned chili"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(chiliItem=>(chiliItem.typeName.toLowerCase()==="canned chili"))?._id}>
@@ -590,7 +590,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Soup<img src={require("../icons/foodIcons/icons8-soup-plate-48.png")}></img></td>
+          <td>Soup<img alt="icon"  src={require("../icons/foodIcons/icons8-soup-plate-48.png")}></img></td>
           <td>{foodItems?.find(soupItem=>(soupItem.typeName.toLowerCase()==="canned soup"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateAisle} className='text-center' id={foodItems?.find(soupItem=>(soupItem.typeName.toLowerCase()==="canned soup"))?._id}>
@@ -627,7 +627,7 @@ function StoreTable() {
     </thead>
     <tbody>
       <tr>
-        <td>Paper Towels<img src={require("../icons/houseIcons/icons8-wipes-48.png")}></img></td>
+        <td>Paper Towels<img alt="icon"  src={require("../icons/houseIcons/icons8-wipes-48.png")}></img></td>
         <td>{houseItems?.find(papertowelItem=>(papertowelItem.typeName.toLowerCase()==="paper towels"))?.aisleLocation}</td>
         <td>
          <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(papertowelItem=>(papertowelItem.typeName.toLowerCase()==="paper towels"))?._id}>
@@ -641,7 +641,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Napkins<img src={require("../icons/houseIcons/icons8-wipes-48.png")}></img></td>
+        <td>Napkins<img alt="icon"  src={require("../icons/houseIcons/icons8-wipes-48.png")}></img></td>
         <td>{houseItems?.find(napkinItem=>(napkinItem.typeName.toLowerCase()==="napkins"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(napkinItem=>(napkinItem.typeName.toLowerCase()==="napkins"))?._id}>
@@ -655,7 +655,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Rubber Gloves<img src={require("../icons/houseIcons/icons8-rubber-gloves-48.png")}></img></td>
+        <td>Rubber Gloves<img alt="icon"  src={require("../icons/houseIcons/icons8-rubber-gloves-48.png")}></img></td>
         <td>{houseItems?.find(rubbergloveItem=>(rubbergloveItem.typeName.toLowerCase()==="rubber gloves"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(rubbergloveItem=>(rubbergloveItem.typeName.toLowerCase()==="rubber gloves"))?._id}>
@@ -669,7 +669,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Sponges<img src={require("../icons/houseIcons/icons8-absorb-48.png")}></img></td>
+        <td>Sponges<img alt="icon"  src={require("../icons/houseIcons/icons8-absorb-48.png")}></img></td>
         <td>{houseItems?.find(spongeItem=>(spongeItem.typeName.toLowerCase()==="sponges"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(spongeItem=>(spongeItem.typeName.toLowerCase()==="sponges"))?._id}>
@@ -683,7 +683,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Detergent<img src={require("../icons/houseIcons/icons8-wash-by-hand-48.png")}></img></td>
+        <td>Detergent<img alt="icon"  src={require("../icons/houseIcons/icons8-wash-by-hand-48.png")}></img></td>
         <td>{houseItems?.find(detergentItem=>(detergentItem.typeName.toLowerCase()==="detergent"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(detergentItem=>(detergentItem.typeName.toLowerCase()==="detergent"))?._id}>
@@ -697,7 +697,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Fabric Softener<img src={require("../icons/houseIcons/icons8-wash-by-hand-48.png")}></img></td>
+        <td>Fabric Softener<img alt="icon"  src={require("../icons/houseIcons/icons8-wash-by-hand-48.png")}></img></td>
         <td>{houseItems?.find(fabricItem=>(fabricItem.typeName.toLowerCase()==="fabric softener"))?.aisleLocation}</td>
         <td>
          <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(fabricItem=>(fabricItem.typeName.toLowerCase()==="fabric softener"))?._id}>
@@ -711,7 +711,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Cleaners<img src={require("../icons/houseIcons/icons8-spray-48.png")}></img></td>
+        <td>Cleaners<img alt="icon"  src={require("../icons/houseIcons/icons8-spray-48.png")}></img></td>
         <td>{houseItems?.find(cleanerItem=>(cleanerItem.typeName.toLowerCase()==="cleaners"))?.aisleLocation}</td>
         <td>
          <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(cleanerItem=>(cleanerItem.typeName.toLowerCase()==="cleaners"))?._id}>
@@ -725,7 +725,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Garbage Bags<img src={require("../icons/houseIcons/icons8-trash-can-48.png")}></img></td>
+        <td>Garbage Bags<img alt="icon"  src={require("../icons/houseIcons/icons8-trash-can-48.png")}></img></td>
         <td>{houseItems?.find(garbageItem=>(garbageItem.typeName.toLowerCase()==="garbage bags"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(garbageItem=>(garbageItem.typeName.toLowerCase()==="garbage bags"))?._id}>
@@ -739,7 +739,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Toilet Paper<img src={require("../icons/houseIcons/icons8-toilet-paper-48.png")}></img></td>
+        <td>Toilet Paper<img alt="icon"  src={require("../icons/houseIcons/icons8-toilet-paper-48.png")}></img></td>
         <td>{houseItems?.find(toiletPaperItem=>(toiletPaperItem.typeName.toLowerCase()==="toilet paper"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(toiletPaperItem=>(toiletPaperItem.typeName.toLowerCase()==="toilet paper"))?._id}>
@@ -753,7 +753,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Brooms and Mops<img src={require("../icons/houseIcons/icons8-housekeeping-48.png")}></img></td>
+        <td>Brooms and Mops<img alt="icon"  src={require("../icons/houseIcons/icons8-housekeeping-48.png")}></img></td>
         <td>{houseItems?.find(broomsItem=>(broomsItem.typeName.toLowerCase()==="brooms and mops"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(broomsItem=>(broomsItem.typeName.toLowerCase()==="brooms and mops"))?._id}>
@@ -783,7 +783,7 @@ function StoreTable() {
       </thead>
       <tbody>
         <tr>
-          <td>Hair Products<img src={require("../icons/houseIcons/icons8-hair-brush-48.png")}></img></td>
+          <td>Hair Products<img alt="icon"  src={require("../icons/houseIcons/icons8-hair-brush-48.png")}></img></td>
           <td>{houseItems?.find(hairsItems=>(hairsItems.typeName.toLowerCase()==="hair products"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(hairsItems=>(hairsItems.typeName.toLowerCase()==="hair products"))?._id}>
@@ -797,7 +797,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-          <td>Cold and Flu<img src={require("../icons/houseIcons/icons8-virus-48.png")}></img></td>
+          <td>Cold and Flu<img alt="icon"  src={require("../icons/houseIcons/icons8-virus-48.png")}></img></td>
           <td>{houseItems?.find(coldItems=>(coldItems.typeName.toLowerCase()==="cold and flu"))?.aisleLocation}</td>
           <td>
             <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(coldItems=>(coldItems.typeName.toLowerCase()==="cold and flu"))?._id}>
@@ -811,7 +811,7 @@ function StoreTable() {
           </td>
         </tr>
         <tr>
-        <td>Pain Medication<img src={require("../icons/houseIcons/icons8-pill-48.png")}></img></td>
+        <td>Pain Medication<img alt="icon"  src={require("../icons/houseIcons/icons8-pill-48.png")}></img></td>
         <td>{houseItems?.find(painItem=>(painItem.typeName.toLowerCase()==="pain medication"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(painItem=>(painItem.typeName.toLowerCase()==="frozen meats"))?._id}>
@@ -825,7 +825,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Contraception<img src={require("../icons/houseIcons/icons8-pregnancy-test-48.png")}></img></td>
+        <td>Contraception<img alt="icon"  src={require("../icons/houseIcons/icons8-pregnancy-test-48.png")}></img></td>
         <td>{houseItems?.find(contraceptionItem=>(contraceptionItem.typeName.toLowerCase()==="contraception"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(contraceptionItem=>(contraceptionItem.typeName.toLowerCase()==="contraception"))?._id}>
@@ -856,7 +856,7 @@ function StoreTable() {
     </thead>
     <tbody>
     <tr>
-        <td>Formula<img src={require("../icons/houseIcons/icons8-baby-bottle-48.png")}></img></td>
+        <td>Formula<img alt="icon"  src={require("../icons/houseIcons/icons8-baby-bottle-48.png")}></img></td>
         <td>{houseItems?.find(formulaItem=>(formulaItem.typeName.toLowerCase()==="baby formula"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(formulaItem=>(formulaItem.typeName.toLowerCase()==="baby formula"))?._id}>
@@ -870,7 +870,7 @@ function StoreTable() {
         </td>
       </tr>
       <tr>
-        <td>Diapers<img src={require("../icons/houseIcons/icons8-nappy-48.png")}></img></td>
+        <td>Diapers<img alt="icon"  src={require("../icons/houseIcons/icons8-nappy-48.png")}></img></td>
         <td>{houseItems?.find(diapersItem=>(diapersItem.typeName.toLowerCase()==="baby diapers"))?.aisleLocation}</td>
         <td>
           <Form onSubmit={updateHouseAisle} className='text-center' id={houseItems?.find(diapersItem=>(diapersItem.typeName.toLowerCase()==="baby diapers"))?._id}>
