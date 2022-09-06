@@ -1,12 +1,12 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Container from 'react-bootstrap/Container';
+// import Navbar from 'react-bootstrap/Navbar';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import MultiStore from '../MultiStorePage';
 
 // Search imports
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
