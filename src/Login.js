@@ -1,6 +1,6 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import AuthForm from '../src/components/AuthForm/Index'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 export default function Login(props) {
 
   return (

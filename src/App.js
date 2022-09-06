@@ -17,7 +17,7 @@ function App() {
     id:0,
     email:''
   })
-  const [token, setToken] = useState("")
+  // const [token, setToken] = useState("")
 
   useEffect(()=>{
     const storedToken = localStorage.getItem("token");
@@ -29,7 +29,7 @@ function App() {
       else {
         console.log("valid token")
         res.json().then(data=>{
-          setToken(storedToken)
+          // setToken(storedToken)
           setUser({
             id:data.id,
             email:data.email
@@ -43,7 +43,7 @@ function App() {
     API.login(email,password).then(res=>{
       if(!res.ok){
         setUser({userId:0,email:""});
-        setToken("")
+        // setToken("")
         return;
       }
        return res.json()
@@ -53,7 +53,7 @@ function App() {
         id:data.user.id,
         email:data.user.email
       })
-      setToken(data.token)
+      // setToken(data.token)
       localStorage.setItem("token",data.token)
      
     })
@@ -63,7 +63,7 @@ function App() {
     API.signup(email,password).then(res=>{
       if(!res.ok){
         setUser({userId:0,email:""});
-        setToken("")
+        // setToken("")
         return;
       }
        return res.json()
@@ -73,19 +73,19 @@ function App() {
         id:data.user.id,
         email:data.user.email
       })
-      setToken(data.token)
+      // setToken(data.token)
       localStorage.setItem("token",data.token)
     })
   }
 
-  const logoutClick = ()=>{
-    localStorage.removeItem("token");
-    setUser({
-      id:0,
-      email:''
-    })
-    setToken("")
-  }
+  // const logoutClick = ()=>{
+  //   localStorage.removeItem("token");
+  //   setUser({
+  //     id:0,
+  //     email:''
+  //   })
+  //   setToken("")
+  // }
 
   
   return (
