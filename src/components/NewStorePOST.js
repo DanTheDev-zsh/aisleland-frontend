@@ -1,11 +1,11 @@
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 // Search imports
-import {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+// import {useEffect, useState} from 'react';
+// import {useNavigate} from 'react-router-dom';
 
 // const styles = {
 //     headerStyle: {
@@ -15,26 +15,27 @@ import {useNavigate} from 'react-router-dom';
 
 function NewStorePOST() {
 
-    const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
+    // const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
 
-    const newStore = (e) =>{
-        e.preventDefault()
-        console.log(e.target.children[0].children[0].value)
-        const foodID = e.target.getAttribute("id")
-        fetch(`${URL_PREFIX}/api/stores/`,{
-          method:"POST",
-          body:JSON.stringify({
-            aisleLocation: e.target.children[0].children[0].value,
-          }),
-          headers:{
-              "Content-Type":"application/json"
-          } 
-        }).then(res=>{
-          return res.json()
-        }).then(data=>{
-          console.log(data)
-        })
-      }
+    // const newStore = (e) =>{
+    //     e.preventDefault()
+    //     const nameProp = e.target.getAttribute("id")
+    //     fetch(`${URL_PREFIX}/api/stores/`,{
+    //       method:"POST",
+    //       body:JSON.stringify({
+    //         name: sdf,
+    //         address: dsf,
+    //         zipCode: dsf,
+    //       }),
+    //       headers:{
+    //           "Content-Type":"application/json"
+    //       } 
+    //     }).then(res=>{
+    //       return res.json()
+    //     }).then(data=>{
+    //       console.log(data)
+    //     })
+    //   }
 
 
 
@@ -44,7 +45,7 @@ function NewStorePOST() {
         <Card className="text-center">
         <Card.Header>Create a New Store</Card.Header>
         <Card.Body>
-            <Form onSubmit={newStore}>
+            <Form>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Store Name</Form.Label>
                     <Form.Control type="password" placeholder="Enter store name" />
