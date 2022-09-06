@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default function AuthForm(props) {
     const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [userName, setUserName] = useState("")
+  // const [userName, setUserName] = useState("")
 
   const submit = e=>{
     e.preventDefault();
