@@ -27,7 +27,7 @@ function NewStorePOST () {
           body:JSON.stringify({
             name: e.target.children[0].children[1].value,
             address: e.target.children[1].children[1].value,
-            zipCode: e.target.children[2].children[1].value
+            zipCode: parseInt(e.target.children[2].children[1].value)
           }),
           headers:{
               "Content-Type":"application/json"
