@@ -1,4 +1,3 @@
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -15,7 +14,8 @@ import Form from 'react-bootstrap/Form';
 
 function NewStorePOST () {
 
-    const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
+    // const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
+
 
     const newStore = (e) =>{
         e.preventDefault()
@@ -43,11 +43,12 @@ function NewStorePOST () {
 
 
 
+
     return (
         <Card className="text-center">
         <Card.Header>Create a New Store</Card.Header>
         <Card.Body>
-            <Form onSubmit={newStore}>
+            <Form>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Store Name</Form.Label>
                     <Form.Control type="input" placeholder="Enter store name" />

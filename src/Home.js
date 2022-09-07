@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import BrandNav from "./components/BrandNav";
-import Login from "./Login";
 import NewStorePOST from "./components/NewStorePOST";
 
 
