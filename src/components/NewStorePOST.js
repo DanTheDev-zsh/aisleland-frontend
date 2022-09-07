@@ -13,18 +13,21 @@ import {useNavigate} from 'react-router-dom';
 //     },
 //   };
 
-function NewStorePOST() {
+function NewStorePOST () {
 
     const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
 
     const newStore = (e) =>{
         e.preventDefault()
-        console.log(e.target.children[0].children[0].value)
-        const foodID = e.target.getAttribute("id")
+        console.log(e.target.children[0].children[1].value)
+        console.log(e.target.children[1].children[1].value)
+        console.log(e.target.children[2].children[1].value)
         fetch(`${URL_PREFIX}/api/stores/`,{
           method:"POST",
           body:JSON.stringify({
-            aisleLocation: e.target.children[0].children[0].value,
+            name: e.target.children[0].children[1].value,
+            address: e.target.children[1].children[1].value,
+            zipCode: e.target.children[2].children[1].value
           }),
           headers:{
               "Content-Type":"application/json"
@@ -47,17 +50,17 @@ function NewStorePOST() {
             <Form onSubmit={newStore}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Store Name</Form.Label>
-                    <Form.Control type="password" placeholder="Enter store name" />
+                    <Form.Control type="input" placeholder="Enter store name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Store Street Address</Form.Label>
-                    <Form.Control type="password" placeholder="Building-Number Street, City, State." />
+                    <Form.Control type="input" placeholder="Building-Number Street, City, State." />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Zip Code</Form.Label>
-                    <Form.Control type="password" placeholder="Enter zip code" />
+                    <Form.Control type="input" placeholder="Enter zip code" />
                 </Form.Group>
 
                 <Button size="sm" variant="outline-success" type="submit">
