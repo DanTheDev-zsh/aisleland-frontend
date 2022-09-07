@@ -108,7 +108,6 @@ function StoreTable() {
   return (
     <div className="StoreTable">
       <h1 className='text-center'>AisleLand</h1>
-      <h3 className='text-center'>query for store name</h3>
       <h3 className='text-center'>Food</h3>
       <Accordion>
       <Accordion.Item eventKey="0">
