@@ -14,7 +14,7 @@ import Form from 'react-bootstrap/Form';
 
 function NewStorePOST () {
 
-    // const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
+    const URL_PREFIX= "https://aisleland-backend.herokuapp.com"
 
 
     const newStore = (e) =>{
