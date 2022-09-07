@@ -48,7 +48,7 @@ function NewStorePOST () {
         <Card className="text-center">
         <Card.Header>Create a New Store</Card.Header>
         <Card.Body>
-            <Form>
+            <Form onSubmit={newStore}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Store Name</Form.Label>
                     <Form.Control type="input" placeholder="Enter store name" />
